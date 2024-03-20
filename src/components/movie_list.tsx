@@ -1,3 +1,4 @@
+import {useNavigation} from '@react-navigation/native';
 import {useQuery} from '@tanstack/react-query';
 import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
@@ -28,11 +29,15 @@ export const MovieList = (keys: MovieListProps) => {
     queryKey: ['movies', keys],
     queryFn: () => getMovies(keys),
   });
+  const navigation = useNavigation();
 
   return (
     <ScrollView horizontal={true} contentContainerStyle={tw('gap-2')}>
       {query.data?.results?.map(movie => (
-        <TouchableOpacity style={tw('relative')} key={movie.id}>
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Movie', {id: movie.id})}
+          style={tw('relative')}
+          key={movie.id}>
           <View style={tw('flex flex-col')}>
             <Image
               style={[tw('w-40 rounded-md'), {aspectRatio: 500 / 750}]}

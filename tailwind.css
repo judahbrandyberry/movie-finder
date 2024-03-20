@@ -1,33 +1,13 @@
-.absolute {
-  position: absolute
-}
-
 .relative {
   position: relative
-}
-
-.bottom-0 {
-  bottom: 0px
 }
 
 .flex {
   display: flex
 }
 
-.h-52 {
-  height: 13rem
-}
-
-.h-40 {
-  height: 10rem
-}
-
 .w-40 {
   width: 10rem
-}
-
-.w-4 {
-  width: 1rem
 }
 
 .flex-row {
@@ -69,11 +49,6 @@
 
 .text-center {
   text-align: center
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem
 }
 
 .text-xl {

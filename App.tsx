@@ -5,7 +5,7 @@ import {
   QueryClientProvider,
   useQuery,
 } from '@tanstack/react-query';
-import {Genres} from './src/genres';
+
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Genre} from './src/genre';
@@ -15,16 +15,18 @@ import {Home} from './src/home';
 import {Search} from './src/search';
 import {Actors} from './src/actors';
 import {Menu} from './src/components/menu';
+
 import {TMDB} from 'tmdb-ts';
+import {Movie} from './src/movie';
 
 const queryClient = new QueryClient();
 
 export type RootStackList = {
   Home: undefined;
   Genre: {id: number};
-  Genres: undefined;
   Search: undefined;
   Actors: undefined;
+  Movie: {id: number};
 };
 
 const Stack = createNativeStackNavigator<RootStackList>();
@@ -36,8 +38,8 @@ const InnerApp = () => {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Search" component={Search} />
         <Stack.Screen name="Actors" component={Actors} />
-        {/* <Stack.Screen name="Genres" component={Genres} /> */}
         <Stack.Screen name="Genre" component={Genre} />
+        <Stack.Screen name="Movie" component={Movie} />
       </Stack.Navigator>
     </NavigationContainer>
   );

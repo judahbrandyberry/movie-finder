@@ -260,10 +260,9 @@ GatherProvisioningInputs
 
 CreateBuildDescription
 
-ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk /Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator17.2-21K354-8624ad4cc7932570938c63a67e56c8d5.sdkstatcache
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk /Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator17.4-21L224-54302ded5c8068b17c60ced60f39ed80.sdkstatcache
     cd /Users/judahbrandyberry/Documents/dev/MovieFinder/ios
-    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk -o /Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator17.2-21K354-8624ad4cc7932570938c63a67e56c8d5.sdkstatcache
-Base directory status changed. Regenerating...
+    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk -o /Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator17.4-21L224-54302ded5c8068b17c60ced60f39ed80.sdkstatcache
 
 warning: Run script build phase 'Bundle React Native Code And Images' will be run during every build because it does not specify any outputs. To address this warning, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'MovieFinder-tvOS' from project 'MovieFinder')
 warning: Run script build phase 'Start Packager' will be run during every build because it does not specify any outputs. To address this warning, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'MovieFinder-tvOS' from project 'MovieFinder')
@@ -324,8 +323,8 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export BUNDLE_PLUGINS_FOLDER_PATH\=PlugIns
     export BUNDLE_PRIVATE_HEADERS_FOLDER_PATH\=PrivateHeaders
     export BUNDLE_PUBLIC_HEADERS_FOLDER_PATH\=Headers
-    export CACHE_ROOT\=/var/folders/f2/gx5jfy21147cztc8ppnw16qw0000gn/C/com.apple.DeveloperTools/15.2-15C500b/Xcode
-    export CCHROOT\=/var/folders/f2/gx5jfy21147cztc8ppnw16qw0000gn/C/com.apple.DeveloperTools/15.2-15C500b/Xcode
+    export CACHE_ROOT\=/var/folders/f2/gx5jfy21147cztc8ppnw16qw0000gn/C/com.apple.DeveloperTools/15.3-15E204a/Xcode
+    export CCHROOT\=/var/folders/f2/gx5jfy21147cztc8ppnw16qw0000gn/C/com.apple.DeveloperTools/15.3-15E204a/Xcode
     export CHMOD\=/bin/chmod
     export CHOWN\=/usr/sbin/chown
     export CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED\=YES
@@ -369,6 +368,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export CODE_SIGN_INJECT_BASE_ENTITLEMENTS\=YES
     export COLOR_DIAGNOSTICS\=NO
     export COMBINE_HIDPI_IMAGES\=NO
+    export COMPILATION_CACHE_KEEP_CAS_DIRECTORY\=YES
     export COMPILER_INDEX_STORE_ENABLE\=Default
     export COMPOSITE_SDK_DIRS\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/CompositeSDKs
     export COMPRESS_PNG_FILES\=YES
@@ -383,8 +383,8 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export COPY_PHASE_STRIP\=NO
     export CORRESPONDING_DEVICE_PLATFORM_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform
     export CORRESPONDING_DEVICE_PLATFORM_NAME\=appletvos
-    export CORRESPONDING_DEVICE_SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS17.2.sdk
-    export CORRESPONDING_DEVICE_SDK_NAME\=appletvos17.2
+    export CORRESPONDING_DEVICE_SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS17.4.sdk
+    export CORRESPONDING_DEVICE_SDK_NAME\=appletvos17.4
     export CP\=/bin/cp
     export CREATE_INFOPLIST_SECTION_IN_BINARY\=NO
     export CURRENT_ARCH\=undefined_arch
@@ -399,7 +399,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export DEPLOYMENT_LOCATION\=NO
     export DEPLOYMENT_POSTPROCESSING\=NO
     export DEPLOYMENT_TARGET_SETTING_NAME\=TVOS_DEPLOYMENT_TARGET
-    export DEPLOYMENT_TARGET_SUGGESTED_VALUES\=12.0\ 12.1\ 12.2\ 12.3\ 12.4\ 13.0\ 13.2\ 13.3\ 13.4\ 14.0\ 14.2\ 14.3\ 14.4\ 14.5\ 14.6\ 14.7\ 15.0\ 15.1\ 15.2\ 15.3\ 15.4\ 15.5\ 15.6\ 16.0\ 16.1\ 16.2\ 16.3\ 16.4\ 16.5\ 16.6\ 17.0\ 17.1\ 17.2
+    export DEPLOYMENT_TARGET_SUGGESTED_VALUES\=12.0\ 12.1\ 12.2\ 12.3\ 12.4\ 13.0\ 13.2\ 13.3\ 13.4\ 14.0\ 14.2\ 14.3\ 14.4\ 14.5\ 14.6\ 14.7\ 15.0\ 15.1\ 15.2\ 15.3\ 15.4\ 15.5\ 15.6\ 16.0\ 16.1\ 16.2\ 16.3\ 16.4\ 16.5\ 16.6\ 17.0\ 17.1\ 17.2\ 17.3\ 17.4
     export DERIVED_FILES_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/DerivedSources
     export DERIVED_FILE_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/DerivedSources
     export DERIVED_SOURCES_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/DerivedSources
@@ -551,7 +551,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export LIBRARY_FLAG_NOSPACE\=YES
     export LIBRARY_FLAG_PREFIX\=-l
     export LIBRARY_KEXT_INSTALL_PATH\=/Library/Extensions
-    export LIBRARY_SEARCH_PATHS\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk/usr/lib/swift\ \"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/appletvsimulator\"\ \"\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/DoubleConversion-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/RCT-Folly-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/RCTTypeSafety-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/RNScreens-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-Codegen-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-Core-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-CoreModules-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTAnimation-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTAppDelegate-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTBlob-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTImage-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTLinking-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTNetwork-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTSettings-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTText-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-cxxreact-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-hermes-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-jsi-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-jsiexecutor-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-jsinspector-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-logger-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-perflogger-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/ReactCommon-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/Yoga-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/fmt-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/glog-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/libevent-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/react-native-safe-area-context-tvOS\"
+    export LIBRARY_SEARCH_PATHS\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk/usr/lib/swift\ \"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/appletvsimulator\"\ \"\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/DoubleConversion-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/RCT-Folly-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/RCTTypeSafety-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/RNScreens-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-Codegen-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-Core-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-CoreModules-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTAnimation-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTAppDelegate-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTBlob-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTImage-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTLinking-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTNetwork-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTSettings-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-RCTText-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-cxxreact-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-hermes-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-jsi-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-jsiexecutor-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-jsinspector-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-logger-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/React-perflogger-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/ReactCommon-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/Yoga-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/fmt-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/glog-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/libevent-tvOS\"\ \"/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products/Debug-appletvsimulator/react-native-safe-area-context-tvOS\"
     export LINKER_DISPLAYS_MANGLED_NAMES\=NO
     export LINK_FILE_LIST_normal_arm64\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/Objects-normal/arm64/MovieFinder-tvOS.LinkFileList
     export LINK_OBJC_RUNTIME\=YES
@@ -559,6 +559,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export LLVM_TARGET_TRIPLE_OS_VERSION\=tvos12.4
     export LLVM_TARGET_TRIPLE_SUFFIX\=-simulator
     export LLVM_TARGET_TRIPLE_VENDOR\=apple
+    export LM_AUX_CONST_METADATA_LIST_PATH_normal_arm64\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/Objects-normal/arm64/MovieFinder-tvOS.SwiftConstValuesFileList
     export LOCALIZATION_EXPORT_SUPPORTED\=YES
     export LOCALIZATION_PREFERS_STRING_CATALOGS\=NO
     export LOCALIZED_RESOURCES_FOLDER_PATH\=MovieFinder-tvOS.app/en.lproj
@@ -602,7 +603,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export OTHER_SWIFT_FLAGS\=\ -D\ COCOAPODS\ -Xcc\ -fmodule-map-file\=\"/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Headers/Public/RCTTypeSafety/RCTTypeSafety-tvOS.modulemap\"\ -Xcc\ -fmodule-map-file\=\"/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Headers/Public/React/React-Core-tvOS.modulemap\"\ -Xcc\ -fmodule-map-file\=\"/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Headers/Public/ReactCommon/ReactCommon-tvOS.modulemap\"\ -Xcc\ -fmodule-map-file\=\"/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Headers/Public/React_Codegen/React-Codegen-tvOS.modulemap\"\ -Xcc\ -fmodule-map-file\=\"/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Headers/Public/folly/RCT-Folly-tvOS.modulemap\"\ -Xcc\ -fmodule-map-file\=\"/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Headers/Public/yoga/Yoga-tvOS.modulemap\"
     export PACKAGE_TYPE\=com.apple.package-type.wrapper.application
     export PASCAL_STRINGS\=YES
-    export PATH\=/Applications/Xcode.app/Contents/Developer/Library/Xcode/Plug-ins/XCBSpecifications.ideplugin/Contents/Resources:/Applications/Xcode.app/Contents/Developer/Library/Xcode/Plug-ins/XCBSpecifications.ideplugin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/appleinternal/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/usr/appleinternal/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/var/folders/f2/gx5jfy21147cztc8ppnw16qw0000gn/T/yarn--1706647199582-0.6496583247522323:/Users/judahbrandyberry/Documents/dev/MovieFinder/node_modules/.bin:/Users/judahbrandyberry/.config/yarn/link/node_modules/.bin:/Users/judahbrandyberry/.yarn/bin:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/judahbrandyberry/.asdf/plugins/nodejs/shims:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/bin:/Users/judahbrandyberry/.asdf/shims:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin
+    export PATH\=/Applications/Xcode.app/Contents/SharedFrameworks/XCBuild.framework/Versions/A/PlugIns/XCBBuildService.bundle/Contents/PlugIns/XCBSpecifications.ideplugin/Contents/Resources:/Applications/Xcode.app/Contents/SharedFrameworks/XCBuild.framework/Versions/A/PlugIns/XCBBuildService.bundle/Contents/PlugIns/XCBSpecifications.ideplugin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/appleinternal/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/usr/appleinternal/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/var/folders/f2/gx5jfy21147cztc8ppnw16qw0000gn/T/yarn--1710854432717-0.07728919186370331:/Users/judahbrandyberry/Documents/dev/MovieFinder/node_modules/.bin:/Users/judahbrandyberry/.config/yarn/link/node_modules/.bin:/Users/judahbrandyberry/.yarn/bin:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/judahbrandyberry/.asdf/plugins/nodejs/shims:/Users/judahbrandyberry/.asdf/installs/nodejs/18.7.0/bin:/Users/judahbrandyberry/.asdf/shims:/opt/homebrew/opt/asdf/libexec/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin
     export PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES\=/usr/include\ /usr/local/include\ /System/Library/Frameworks\ /System/Library/PrivateFrameworks\ /Applications/Xcode.app/Contents/Developer/Headers\ /Applications/Xcode.app/Contents/Developer/SDKs\ /Applications/Xcode.app/Contents/Developer/Platforms
     export PBDEVELOPMENTPLIST_PATH\=MovieFinder-tvOS.app/pbdevelopment.plist
     export PER_ARCH_OBJECT_FILE_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/Objects-normal/undefined_arch
@@ -620,7 +621,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export PLATFORM_FAMILY_NAME\=tvOS
     export PLATFORM_NAME\=appletvsimulator
     export PLATFORM_PREFERRED_ARCH\=x86_64
-    export PLATFORM_PRODUCT_BUILD_VERSION\=21K354
+    export PLATFORM_PRODUCT_BUILD_VERSION\=21L224
     export PLIST_FILE_OUTPUT_FORMAT\=binary
     export PLUGINS_FOLDER_PATH\=MovieFinder-tvOS.app/PlugIns
     export PODS_BUILD_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Products
@@ -632,6 +633,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export PRECOMP_DESTINATION_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/PrefixHeaders
     export PRESERVE_DEAD_CODE_INITS_AND_TERMS\=NO
     export PRIVATE_HEADERS_FOLDER_PATH\=MovieFinder-tvOS.app/PrivateHeaders
+    export PROCESSED_INFOPLIST_PATH\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build/Objects-normal/undefined_arch/Processed-Info.plist
     export PRODUCT_BUNDLE_IDENTIFIER\=org.reactjs.native.example.MovieFinder-tvOS
     export PRODUCT_BUNDLE_PACKAGE_TYPE\=APPL
     export PRODUCT_MODULE_NAME\=MovieFinder_tvOS
@@ -668,20 +670,20 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export SCRIPT_INPUT_FILE_LIST_COUNT\=0
     export SCRIPT_OUTPUT_FILE_COUNT\=0
     export SCRIPT_OUTPUT_FILE_LIST_COUNT\=0
-    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk
-    export SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk
-    export SDK_DIR_appletvsimulator\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk
-    export SDK_DIR_appletvsimulator17_2\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk
-    export SDK_NAME\=appletvsimulator17.2
-    export SDK_NAMES\=appletvsimulator17.2
-    export SDK_PRODUCT_BUILD_VERSION\=21K354
+    export SDKROOT\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk
+    export SDK_DIR\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk
+    export SDK_DIR_appletvsimulator\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk
+    export SDK_DIR_appletvsimulator17_4\=/Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk
+    export SDK_NAME\=appletvsimulator17.4
+    export SDK_NAMES\=appletvsimulator17.4
+    export SDK_PRODUCT_BUILD_VERSION\=21L224
     export SDK_STAT_CACHE_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData
     export SDK_STAT_CACHE_ENABLE\=YES
-    export SDK_STAT_CACHE_PATH\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator17.2-21K354-8624ad4cc7932570938c63a67e56c8d5.sdkstatcache
-    export SDK_VERSION\=17.2
-    export SDK_VERSION_ACTUAL\=170200
+    export SDK_STAT_CACHE_PATH\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/SDKStatCaches.noindex/appletvsimulator17.4-21L224-54302ded5c8068b17c60ced60f39ed80.sdkstatcache
+    export SDK_VERSION\=17.4
+    export SDK_VERSION_ACTUAL\=170400
     export SDK_VERSION_MAJOR\=170000
-    export SDK_VERSION_MINOR\=170200
+    export SDK_VERSION_MINOR\=170400
     export SED\=/usr/bin/sed
     export SEPARATE_STRIP\=NO
     export SEPARATE_SYMBOL_EDIT\=NO
@@ -760,7 +762,7 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export TEMP_FILES_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build
     export TEMP_FILE_DIR\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex/MovieFinder.build/Debug-appletvsimulator/MovieFinder-tvOS.build
     export TEMP_ROOT\=/Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-boarzxtrwabghybrrnoriadcrhos/Build/Intermediates.noindex
-    export TEST_FRAMEWORK_SEARCH_PATHS\=\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.2.sdk/Developer/Library/Frameworks
+    export TEST_FRAMEWORK_SEARCH_PATHS\=\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/Library/Frameworks\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/SDKs/AppleTVSimulator17.4.sdk/Developer/Library/Frameworks
     export TEST_LIBRARY_SEARCH_PATHS\=\ /Applications/Xcode.app/Contents/Developer/Platforms/AppleTVSimulator.platform/Developer/usr/lib
     export TOOLCHAINS\=com.apple.dt.toolchain.XcodeDefault
     export TOOLCHAIN_DIR\=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain
@@ -793,10 +795,10 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
     export WRAPPER_SUFFIX\=.app
     export WRAP_ASSET_PACKS_IN_SEPARATE_DIRECTORIES\=NO
     export XCODE_APP_SUPPORT_DIR\=/Applications/Xcode.app/Contents/Developer/Library/Xcode
-    export XCODE_PRODUCT_BUILD_VERSION\=15C500b
-    export XCODE_VERSION_ACTUAL\=1520
+    export XCODE_PRODUCT_BUILD_VERSION\=15E204a
+    export XCODE_VERSION_ACTUAL\=1530
     export XCODE_VERSION_MAJOR\=1500
-    export XCODE_VERSION_MINOR\=1520
+    export XCODE_VERSION_MINOR\=1530
     export XPCSERVICES_FOLDER_PATH\=MovieFinder-tvOS.app/XPCServices
     export YACC\=yacc
     export _WRAPPER_CONTENTS_DIR_SHALLOW_BUNDLE_NO\=/Contents
@@ -821,8 +823,8 @@ PhaseScriptExecution Bundle\ React\ Native\ Code\ And\ Images /Users/judahbrandy
 Skipping bundling in Debug for the Simulator (since the packager bundles for you). Use the FORCE_BUNDLING flag to change this behavior.
 + exit 0
 
-/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Pods.xcodeproj: warning: The tvOS Simulator deployment target 'TVOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 17.2.99. (in target 'fmt-tvOS' from project 'Pods')
-/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Pods.xcodeproj: warning: The tvOS Simulator deployment target 'TVOS_DEPLOYMENT_TARGET' is set to 10.0, but the range of supported deployment target versions is 12.0 to 17.2.99. (in target 'libevent-tvOS' from project 'Pods')
-/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Pods.xcodeproj: warning: The tvOS Simulator deployment target 'TVOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 17.2.99. (in target 'RNScreens-tvOS' from project 'Pods')
+/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Pods.xcodeproj: warning: The tvOS Simulator deployment target 'TVOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 17.4.99. (in target 'RNScreens-tvOS' from project 'Pods')
+/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Pods.xcodeproj: warning: The tvOS Simulator deployment target 'TVOS_DEPLOYMENT_TARGET' is set to 10.0, but the range of supported deployment target versions is 12.0 to 17.4.99. (in target 'libevent-tvOS' from project 'Pods')
+/Users/judahbrandyberry/Documents/dev/MovieFinder/ios/Pods/Pods.xcodeproj: warning: The tvOS Simulator deployment target 'TVOS_DEPLOYMENT_TARGET' is set to 11.0, but the range of supported deployment target versions is 12.0 to 17.4.99. (in target 'fmt-tvOS' from project 'Pods')
 ** BUILD SUCCEEDED **
 
