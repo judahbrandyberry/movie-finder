@@ -32,7 +32,10 @@ export const MovieList = (keys: MovieListProps) => {
   const navigation = useNavigation();
 
   return (
-    <ScrollView horizontal={true} contentContainerStyle={tw('gap-2')}>
+    <ScrollView
+      horizontal={true}
+      contentContainerStyle={tw('gap-2')}
+      style={tw('mb-6')}>
       {query.data?.results?.map(movie => (
         <TouchableOpacity
           onPress={() => navigation.navigate('Movie', {id: movie.id})}

@@ -26,7 +26,7 @@ export const Genre = ({
     genre => genre.id === route.params.id,
   );
   return (
-    <View style={tw('flex-row')}>
+    <View style={tw('flex-row p-4 gap-4')}>
       <View>
         {query.data?.genres?.map(genre => (
           <Tab
@@ -38,7 +38,7 @@ export const Genre = ({
         ))}
       </View>
 
-      <View>
+      <View style={tw('gap-4')}>
         <Text style={tw('text-center font-bold text-xl')}>
           {activeGenre?.name} Of The Year
         </Text>
@@ -46,9 +46,15 @@ export const Genre = ({
           primary_release_year={2024}
           with_genres={route.params.id.toString()}
         />
+
+        <Text style={tw('text-center font-bold text-xl')}>
+          All Time Best {activeGenre?.name}
+        </Text>
+        <MovieList
+          with_genres={route.params.id.toString()}
+          sort_by="vote_count.desc"
+        />
       </View>
     </View>
   );
 };
-
-``;

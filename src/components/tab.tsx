@@ -14,10 +14,16 @@ export const Tab = ({name, selectedName, onPress}: Tab) => {
   return (
     <TouchableOpacity
       style={
-        selectedName === name ? tw('bg-slate-600 p-2 rounded-md') : tw('p-2')
+        selectedName === name ? tw('bg-[#03396D] p-2 rounded-md') : tw('p-2')
       }
       onPress={onPress}>
-      <Text>{name}</Text>
+      <Text
+        style={[
+          tw('font-medium uppercase'),
+          selectedName === name ? tw('text-white') : null,
+        ]}>
+        {name}
+      </Text>
     </TouchableOpacity>
   );
 };

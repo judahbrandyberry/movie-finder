@@ -18,6 +18,7 @@ import {Menu} from './src/components/menu';
 
 import {TMDB} from 'tmdb-ts';
 import {Movie} from './src/movie';
+import LinearGradient from 'react-native-linear-gradient';
 
 const queryClient = new QueryClient();
 
@@ -33,15 +34,18 @@ const Stack = createNativeStackNavigator<RootStackList>();
 
 const InnerApp = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{header: () => <Menu />}}>
-        <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Search" component={Search} />
-        <Stack.Screen name="Actors" component={Actors} />
-        <Stack.Screen name="Genre" component={Genre} />
-        <Stack.Screen name="Movie" component={Movie} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <LinearGradient colors={['#82e8a7', '#1DBD57']} style={{flex: 1}}>
+      <NavigationContainer theme={{colors: {background: 'transparent'}}}>
+        <Menu />
+        <Stack.Navigator screenOptions={{headerShown: false}}>
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="Search" component={Search} />
+          <Stack.Screen name="Actors" component={Actors} />
+          <Stack.Screen name="Genre" component={Genre} />
+          <Stack.Screen name="Movie" component={Movie} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </LinearGradient>
   );
 };
 

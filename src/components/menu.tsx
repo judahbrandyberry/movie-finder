@@ -2,9 +2,9 @@ import {useTailwind} from 'tailwind-rn';
 import {Tab} from './tab';
 import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {useRoute} from '@react-navigation/native';
 import {useQuery} from '@tanstack/react-query';
 import {TMDB} from 'tmdb-ts';
+import {useState} from 'react';
 
 interface MenuProps {
   typeof: string;
@@ -27,29 +27,39 @@ export const getGenres = async () => {
 export const Menu = () => {
   const tw = useTailwind();
   const navigation = useNavigation();
-  const route = useRoute();
+  const [selected, setSelected] = useState('Home');
 
   const query = useQuery({queryKey: ['genres'], queryFn: getGenres});
 
   return (
-    <View style={tw('flex-row justify-between p-4 items-center')}>
+    <View style={[tw('flex-row justify-between p-4 items-center')]}>
       <Tab
-        onPress={() => navigation.navigate('Home')}
-        selectedName={route.name}
+        onPress={() => {
+          setSelected('Home');
+          navigation.navigate('Home');
+        }}
+        selectedName={selected}
         name={'Home'}></Tab>
       <Tab
-        onPress={() =>
-          navigation.navigate('Genre', {id: query.data?.genres[0].id || 0})
-        }
-        selectedName={route.name}
+        onPress={() => {
+          setSelected('Genre');
+          navigation.navigate('Genre', {id: query.data?.genres[0].id || 0});
+        }}
+        selectedName={selected}
         name={'Genre'}></Tab>
       <Tab
-        onPress={() => navigation.navigate('Actors')}
-        selectedName={route.name}
+        onPress={() => {
+          setSelected('Actors');
+          navigation.navigate('Actors');
+        }}
+        selectedName={selected}
         name={'Actors'}></Tab>
       <Tab
-        onPress={() => navigation.navigate('Search')}
-        selectedName={route.name}
+        onPress={() => {
+          setSelected('Search');
+          navigation.navigate('Search');
+        }}
+        selectedName={selected}
         name={'Search'}></Tab>
     </View>
   );

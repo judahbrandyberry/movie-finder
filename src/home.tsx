@@ -7,10 +7,8 @@ import {MovieList} from './components/movie_list';
 export const Home = ({navigation}: NativeStackScreenProps<RootStackList>) => {
   const tw = useTailwind();
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={tw('p-4 gap-4')}>
       <Text style={tw('text-center font-bold text-xl')}>
-        {' '}
         Movies Of The Year
       </Text>
       <MovieList primary_release_year={2024} />
