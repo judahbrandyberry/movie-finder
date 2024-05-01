@@ -59,11 +59,18 @@ export const Actors = ({
 
   return (
     <View style={tw('p-4')}>
-      <TextInput onChangeText={setSearchQuery} value={searchQuery} />
+      <TextInput
+        onChangeText={setSearchQuery}
+        value={searchQuery}
+        style={tw('h-14 m-4')}
+        placeholder="Search"
+        placeholderTextColor="black"
+      />
+
       <ScrollView
         horizontal
         contentContainerStyle={tw('gap-2')}
-        style={tw('mt-4 p-4')}>
+        style={tw('mt-4 -mx-4')}>
         {filturedResults.map(actor => (
           <TouchableOpacity
             key={actor.id}
