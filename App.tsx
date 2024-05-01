@@ -19,6 +19,7 @@ import {Menu} from './src/components/menu';
 import {TMDB} from 'tmdb-ts';
 import {Movie} from './src/movie';
 import LinearGradient from 'react-native-linear-gradient';
+import {Actor} from './src/actor';
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ export type RootStackList = {
   Search: undefined;
   Actors: undefined;
   Movie: {id: number};
+  Actor: {id: number};
 };
 
 const Stack = createNativeStackNavigator<RootStackList>();
@@ -43,6 +45,7 @@ const InnerApp = () => {
           <Stack.Screen name="Actors" component={Actors} />
           <Stack.Screen name="Genre" component={Genre} />
           <Stack.Screen name="Movie" component={Movie} />
+          <Stack.Screen name="Actor" component={Actor} />
         </Stack.Navigator>
       </NavigationContainer>
     </LinearGradient>

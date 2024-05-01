@@ -64,24 +64,33 @@ export const Movie = ({
 
           <ScrollView
             horizontal
-            contentContainerStyle={tw('gap-2')}
+            contentContainerStyle={tw('gap-4')}
             style={tw('mt-4')}>
-            {actors.cast.map(actor => (
-              <TouchableOpacity key={actor.id}>
-                <View style={tw('flex flex-col gap-2')}>
-                  <Image
-                    style={[tw('w-40 rounded-full'), {aspectRatio: 1}]}
-                    source={{
-                      uri:
-                        'https://image.tmdb.org/t/p/w500/' + actor.profile_path,
-                    }}
-                  />
-                  <Text style={tw('text-center font-medium text-lg')}>
-                    {actor.name}
-                  </Text>
-                </View>
-              </TouchableOpacity>
-            ))}
+            {actors.cast
+              .filter(actor => actor.profile_path)
+              .map(actor => (
+                <TouchableOpacity
+                  key={actor.id}
+                  onPress={() => navigation.navigate('Actor', {id: actor.id})}>
+                  <View style={tw('flex flex-col gap-2 items-center')}>
+                    <Image
+                      style={[tw('w-40 rounded-full'), {aspectRatio: 1}]}
+                      source={{
+                        uri:
+                          'https://image.tmdb.org/t/p/w500/' +
+                          actor.profile_path,
+                      }}
+                    />
+                    <Text style={tw('text-center font-medium text-lg')}>
+                      {actor.name}
+                    </Text>
+
+                    <Text style={tw('text-center font-medium text-lg')}>
+                      {`(${actor.character})`}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
           </ScrollView>
         </View>
       </View>
