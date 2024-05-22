@@ -31,7 +31,7 @@ export const Actor = ({
   const tw = useTailwind();
 
   return (
-    <View style={tw('p-4')}>
+    <View style={tw('p-6 gap-12')}>
       <View style={tw('flex-row gap-4 text-center')}>
         <Image
           style={[tw('w-40 rounded-full'), {aspectRatio: 1}]}

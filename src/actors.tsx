@@ -13,6 +13,7 @@ import {TMDB} from 'tmdb-ts';
 import {useQuery} from '@tanstack/react-query';
 import {Movie} from './movie';
 import {useState} from 'react';
+import {ActorCard} from './components/actor-card';
 
 const tmdb = new TMDB(
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjA3MDU5ZDE4NGMzNDE4N2JiMGNkNDFiZGFlYWQ4NiIsInN1YiI6IjY1YTgzMmMxMGU1YWJhMDEyYzdkOWM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vLk_0T3LjlZ71lu7f9TCdBM2X7vmSYI1MNm84TljmNk',
@@ -58,7 +59,7 @@ export const Actors = ({
   }
 
   return (
-    <View style={tw('p-4')}>
+    <View style={tw('p-6')}>
       <TextInput
         onChangeText={setSearchQuery}
         value={searchQuery}
@@ -69,24 +70,10 @@ export const Actors = ({
 
       <ScrollView
         horizontal
-        contentContainerStyle={tw('gap-2')}
-        style={tw('mt-4 -mx-4')}>
+        contentContainerStyle={tw('gap-4 px-6')}
+        style={tw('mt-4 -mx-6')}>
         {filturedResults.map(actor => (
-          <TouchableOpacity
-            key={actor.id}
-            onPress={() => navigation.navigate('Actor', {id: actor.id})}>
-            <View style={tw('flex flex-col gap-2 p-4 ')}>
-              <Image
-                style={[tw('w-40 rounded-full'), {aspectRatio: 1}]}
-                source={{
-                  uri: 'https://image.tmdb.org/t/p/w500/' + actor.profile_path,
-                }}
-              />
-              <Text style={tw('text-center font-medium text-lg')}>
-                {actor.name}
-              </Text>
-            </View>
-          </TouchableOpacity>
+          <ActorCard actor={actor} key={actor.id} />
         ))}
       </ScrollView>
     </View>

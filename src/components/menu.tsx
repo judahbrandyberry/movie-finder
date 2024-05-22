@@ -34,6 +34,7 @@ export const Menu = () => {
   return (
     <View style={[tw('flex-row justify-between p-4 items-center')]}>
       <Tab
+        style={tw('flex-1 items-center')}
         onPress={() => {
           setSelected('Home');
           navigation.navigate('Home');
@@ -41,6 +42,7 @@ export const Menu = () => {
         selectedName={selected}
         name={'Home'}></Tab>
       <Tab
+        style={tw('flex-1 items-center')}
         onPress={() => {
           setSelected('Genre');
           navigation.navigate('Genre', {id: query.data?.genres[0].id || 0});
@@ -48,6 +50,7 @@ export const Menu = () => {
         selectedName={selected}
         name={'Genre'}></Tab>
       <Tab
+        style={tw('flex-1 items-center')}
         onPress={() => {
           setSelected('Actors');
           navigation.navigate('Actors');
@@ -55,6 +58,7 @@ export const Menu = () => {
         selectedName={selected}
         name={'Actors'}></Tab>
       <Tab
+        style={tw('flex-1 items-center')}
         onPress={() => {
           setSelected('Search');
           navigation.navigate('Search');

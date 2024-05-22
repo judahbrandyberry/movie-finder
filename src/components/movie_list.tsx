@@ -4,6 +4,7 @@ import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import {TMDB} from 'tmdb-ts';
 import {DiscoverEndpoint} from 'tmdb-ts/dist/endpoints';
+import {MovieCard} from './movie-card';
 
 export type MovieKeys = Parameters<DiscoverEndpoint['movie']>[0];
 
@@ -34,21 +35,10 @@ export const MovieList = (keys: MovieListProps) => {
   return (
     <ScrollView
       horizontal={true}
-      contentContainerStyle={tw('gap-2')}
-      style={tw('mb-6')}>
+      contentContainerStyle={tw('gap-4 px-6')}
+      style={tw('mb-6 -mx-6')}>
       {query.data?.results?.map(movie => (
-        <TouchableOpacity
-          onPress={() => navigation.navigate('Movie', {id: movie.id})}
-          style={tw('relative')}
-          key={movie.id}>
-          <View style={tw('flex flex-col')}>
-            <Image
-              style={[tw('w-40 rounded-md'), {aspectRatio: 500 / 750}]}
-              source={{
-                uri: 'https://image.tmdb.org/t/p/w500/' + movie.poster_path,
-              }}></Image>
-          </View>
-        </TouchableOpacity>
+        <MovieCard movie={movie} key={movie.id} />
       ))}
     </ScrollView>
   );
