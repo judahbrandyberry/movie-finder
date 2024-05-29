@@ -1,11 +1,22 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackList} from '../App';
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {
+  Button,
+  Image,
+  Linking,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {useQuery} from '@tanstack/react-query';
 import {TMDB} from 'tmdb-ts';
 import {useTailwind} from 'tailwind-rn';
 import {MovieCard} from './components/movie-card';
 import {ActorCard} from './components/actor-card';
+import {getItunesMovies} from './api/itunes';
+import Video, {VideoRef} from 'react-native-video';
+import {useEffect, useRef} from 'react';
 
 const tmdb = new TMDB(
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjA3MDU5ZDE4NGMzNDE4N2JiMGNkNDFiZGFlYWQ4NiIsInN1YiI6IjY1YTgzMmMxMGU1YWJhMDEyYzdkOWM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vLk_0T3LjlZ71lu7f9TCdBM2X7vmSYI1MNm84TljmNk',
@@ -35,9 +46,16 @@ export const Movie = ({
   navigation,
   route,
 }: NativeStackScreenProps<RootStackList, 'Movie'>) => {
+  const video = useRef<VideoRef>(null);
   const {data: movie} = useQuery({
     queryKey: ['movie', route.params.id],
     queryFn: () => getMovie(route.params.id),
+  });
+
+  const {data: itunesMovie} = useQuery({
+    queryKey: ['movie', movie?.title],
+    queryFn: () => getItunesMovies(movie?.title),
+    enabled: !!movie?.title,
   });
 
   const {data: actors} = useQuery({
@@ -57,6 +75,15 @@ export const Movie = ({
         source={{
           uri: 'https://image.tmdb.org/t/p/original/' + movie.backdrop_path,
         }}></Image>
+      <Video
+        paused
+        ref={video}
+        source={{uri: itunesMovie?.previewUrl}}
+        // style={{width: 200, height: 200}}
+      />
+      <Button
+        title={'playtrailer'}
+        onPress={() => video.current?.presentFullscreenPlayer()}></Button>
       <View style={tw('flex-1 gap-4')}>
         <Text style={tw('text-center font-bold text-4xl')}>{movie.title}</Text>
         <Text style={tw('font-medium text-2xl')}>{movie.overview}</Text>
@@ -71,6 +98,29 @@ export const Movie = ({
               <ActorCard actor={actor} key={actor.id} />
             ))}
         </ScrollView>
+
+        <View style={tw('flex-row gap-6 items-center')}>
+          <TouchableOpacity
+            style={tw('bg-white rounded-lg')}
+            onPress={() =>
+              Linking.openURL(
+                `https://tv.apple.com/us/movie/${itunesMovie?.trackId}`,
+              )
+            }>
+            <Image
+              style={{height: 100, width: 150}}
+              source={require('../assets/apple-tv.png')}></Image>
+          </TouchableOpacity>
+
+          <Text style={tw('text-xl text-center')}>
+            <Text style={tw('font-bold')}>Rental</Text>
+            {'\n'}${itunesMovie?.trackRentalPrice}
+          </Text>
+          <Text style={tw('text-xl text-center')}>
+            <Text style={tw('font-bold')}>Purchase</Text>
+            {'\n'}${itunesMovie?.trackPrice}
+          </Text>
+        </View>
       </View>
     </View>
   );

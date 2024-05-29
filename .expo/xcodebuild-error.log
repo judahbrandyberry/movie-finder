@@ -1,3 +1,9 @@
 --- xcodebuild: WARNING: Using the first of multiple matching destinations:
 { platform:tvOS Simulator, id:F23F790D-7BA0-4AC8-A2E2-D28E944948E5, OS:17.5, name:Apple TV }
 { platform:tvOS Simulator, id:F23F790D-7BA0-4AC8-A2E2-D28E944948E5, OS:17.5, name:Apple TV }
+** BUILD FAILED **
+
+
+The following build commands failed:
+	CompileC /Users/judahbrandyberry/Library/Developer/Xcode/DerivedData/MovieFinder-fjwhozwvndkjbpepaqcnycuyhrbj/Build/Intermediates.noindex/Pods.build/Debug-appletvsimulator/react-native-safe-area-context-tvOS.build/Objects-normal/arm64/RNCSafeAreaViewMode.o /Users/judahbrandyberry/Documents/dev/movie-finder/node_modules/react-native-safe-area-context/ios/RNCSafeAreaViewMode.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'react-native-safe-area-context-tvOS' from project 'Pods')
+(1 failure)

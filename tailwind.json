@@ -29,14 +29,14 @@
 			"marginBottom": 24
 		}
 	},
-	"mt-4": {
-		"style": {
-			"marginTop": 16
-		}
-	},
 	"mt-3": {
 		"style": {
 			"marginTop": 12
+		}
+	},
+	"mt-4": {
+		"style": {
+			"marginTop": 16
 		}
 	},
 	"flex": {
@@ -86,19 +86,14 @@
 			"alignItems": "center"
 		}
 	},
-	"justify-center": {
-		"style": {
-			"justifyContent": "center"
-		}
-	},
 	"justify-between": {
 		"style": {
 			"justifyContent": "space-between"
 		}
 	},
-	"gap-2": {
+	"gap-12": {
 		"style": {
-			"gap": 8
+			"gap": 48
 		}
 	},
 	"gap-4": {
@@ -111,14 +106,14 @@
 			"gap": 24
 		}
 	},
-	"gap-8": {
+	"self-start": {
 		"style": {
-			"gap": 32
+			"alignSelf": "flex-start"
 		}
 	},
-	"gap-12": {
+	"self-center": {
 		"style": {
-			"gap": 48
+			"alignSelf": "center"
 		}
 	},
 	"overflow-visible": {
@@ -192,16 +187,16 @@
 			"paddingRight": 16
 		}
 	},
-	"py-2": {
-		"style": {
-			"paddingTop": 8,
-			"paddingBottom": 8
-		}
-	},
 	"px-6": {
 		"style": {
 			"paddingLeft": 24,
 			"paddingRight": 24
+		}
+	},
+	"py-2": {
+		"style": {
+			"paddingTop": 8,
+			"paddingBottom": 8
 		}
 	},
 	"text-center": {
@@ -215,6 +210,12 @@
 			"lineHeight": 32
 		}
 	},
+	"text-4xl": {
+		"style": {
+			"fontSize": 36,
+			"lineHeight": 40
+		}
+	},
 	"text-lg": {
 		"style": {
 			"fontSize": 18,
@@ -225,18 +226,6 @@
 		"style": {
 			"fontSize": 20,
 			"lineHeight": 28
-		}
-	},
-	"text-4xl": {
-		"style": {
-			"fontSize": 36,
-			"lineHeight": 40
-		}
-	},
-	"text-3xl": {
-		"style": {
-			"fontSize": 30,
-			"lineHeight": 36
 		}
 	},
 	"font-bold": {
@@ -254,21 +243,16 @@
 			"fontWeight": "600"
 		}
 	},
-	"uppercase": {
+	"text-[#03396D]": {
 		"style": {
-			"textTransform": "uppercase"
+			"--tw-text-opacity": 1,
+			"color": "rgb(3 57 109 / var(--tw-text-opacity))"
 		}
 	},
 	"text-white": {
 		"style": {
 			"--tw-text-opacity": 1,
 			"color": "rgb(255 255 255 / var(--tw-text-opacity))"
-		}
-	},
-	"text-[#03396D]": {
-		"style": {
-			"--tw-text-opacity": 1,
-			"color": "rgb(3 57 109 / var(--tw-text-opacity))"
 		}
 	}
 }
