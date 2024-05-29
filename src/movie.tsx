@@ -4,6 +4,7 @@ import {
   Button,
   Image,
   Linking,
+  Pressable,
   ScrollView,
   Text,
   TouchableOpacity,
@@ -16,7 +17,7 @@ import {MovieCard} from './components/movie-card';
 import {ActorCard} from './components/actor-card';
 import {getItunesMovies} from './api/itunes';
 import Video, {VideoRef} from 'react-native-video';
-import {useEffect, useRef} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 const tmdb = new TMDB(
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjA3MDU5ZDE4NGMzNDE4N2JiMGNkNDFiZGFlYWQ4NiIsInN1YiI6IjY1YTgzMmMxMGU1YWJhMDEyYzdkOWM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vLk_0T3LjlZ71lu7f9TCdBM2X7vmSYI1MNm84TljmNk',
@@ -47,6 +48,7 @@ export const Movie = ({
   route,
 }: NativeStackScreenProps<RootStackList, 'Movie'>) => {
   const video = useRef<VideoRef>(null);
+  const [fullScreenKey, setFullScreenKey] = useState(Math.random().toString());
   const {data: movie} = useQuery({
     queryKey: ['movie', route.params.id],
     queryFn: () => getMovie(route.params.id),
@@ -70,20 +72,37 @@ export const Movie = ({
 
   return (
     <View style={tw('p-6 flex-row gap-12')}>
-      <Image
-        style={[tw('w-[60rem] rounded-lg'), {aspectRatio: 500 / 281}]}
-        source={{
-          uri: 'https://image.tmdb.org/t/p/original/' + movie.backdrop_path,
-        }}></Image>
-      <Video
-        paused
-        ref={video}
-        source={{uri: itunesMovie?.previewUrl}}
-        // style={{width: 200, height: 200}}
-      />
-      <Button
-        title={'playtrailer'}
-        onPress={() => video.current?.presentFullscreenPlayer()}></Button>
+      <View>
+        <Image
+          style={[tw('w-[55rem] rounded-t-lg'), {aspectRatio: 500 / 281}]}
+          source={{
+            uri: 'https://image.tmdb.org/t/p/original/' + movie.backdrop_path,
+          }}
+        />
+        <Video
+          key={fullScreenKey}
+          paused
+          ref={video}
+          source={{uri: itunesMovie?.previewUrl}}
+          onFullscreenPlayerDidPresent={() => video.current?.resume()}
+          onFullscreenPlayerDidDismiss={() =>
+            setFullScreenKey(Math.random().toString())
+          }
+        />
+        <Pressable
+          style={({focused}) => [
+            tw('bg-black p-6 rounded-b-lg'),
+            focused && tw('bg-[#03396D]'),
+          ]}
+          onPress={() => {
+            video.current?.presentFullscreenPlayer();
+          }}>
+          <Text style={tw('font-bold text-xl text-center text-white')}>
+            Play Trailer
+          </Text>
+        </Pressable>
+      </View>
+
       <View style={tw('flex-1 gap-4')}>
         <Text style={tw('text-center font-bold text-4xl')}>{movie.title}</Text>
         <Text style={tw('font-medium text-2xl')}>{movie.overview}</Text>
@@ -91,7 +110,7 @@ export const Movie = ({
         <ScrollView
           horizontal
           contentContainerStyle={tw('gap-4')}
-          style={tw('mt-4')}>
+          style={tw('mt-4 flex-none')}>
           {actors.cast
             .filter(actor => actor.profile_path)
             .map(actor => (
