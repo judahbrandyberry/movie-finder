@@ -24,13 +24,13 @@ export const Tab = ({name, selectedName, onPress, style}: Tab) => {
       {({pressed, focused}) => (
         <View
           style={[
-            tw(' py-2 px-4 rounded-lg'),
+            tw(' py-4 px-6 rounded-lg'),
             selectedName === name ? tw('bg-[#03396D]') : null,
             focused && tw('bg-white'),
           ]}>
           <Text
             style={[
-              tw('text-2xl font-semibold'),
+              tw('text-4xl font-semibold  text-white'),
               selectedName === name ? tw('text-white') : null,
               focused && tw('text-[#03396D]'),
             ]}>

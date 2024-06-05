@@ -1,10 +1,10 @@
 import {useNavigation} from '@react-navigation/native';
 import {Animated, Image, Pressable, TouchableOpacity, View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
-import {Movie} from 'tmdb-ts';
+import {Movie, Recommendation} from 'tmdb-ts';
 
 interface MovieProps {
-  movie: Movie;
+  movie: Movie | Recommendation;
 }
 
 export const MovieCard = ({movie}: MovieProps) => {

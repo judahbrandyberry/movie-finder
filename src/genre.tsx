@@ -42,7 +42,7 @@ export const Genre = ({
         <ScrollView
           contentContainerStyle={tw('gap-4')}
           style={tw('overflow-visible')}>
-          <Text style={tw('text-center font-bold text-4xl')}>
+          <Text style={tw('text-center font-bold text-4xl text-white')}>
             {activeGenre?.name} Of The Year
           </Text>
           <MovieList
@@ -50,7 +50,7 @@ export const Genre = ({
             with_genres={route.params.id.toString()}
           />
 
-          <Text style={tw('text-center font-bold text-4xl')}>
+          <Text style={tw('text-center font-bold text-4xl text-white')}>
             All Time Best {activeGenre?.name}
           </Text>
           <MovieList

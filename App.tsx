@@ -36,7 +36,7 @@ const Stack = createNativeStackNavigator<RootStackList>();
 
 const InnerApp = () => {
   return (
-    <LinearGradient colors={['#82e8a7', '#1DBD57']} style={{flex: 1}}>
+    <LinearGradient colors={['#003153', '#000500']} style={{flex: 1}}>
       <NavigationContainer theme={{colors: {background: 'transparent'}}}>
         <Menu />
         <Stack.Navigator screenOptions={{headerShown: false}}>

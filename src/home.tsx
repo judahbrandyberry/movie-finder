@@ -11,13 +11,17 @@ export const Home = ({navigation}: NativeStackScreenProps<RootStackList>) => {
       <ScrollView
         contentContainerStyle={tw('gap-4')}
         style={tw('overflow-visible')}>
-        <Text style={tw('text-center font-bold text-4xl')}>
+        <Text style={tw('text-center font-bold text-4xl text-white')}>
           Movies Of The Year
         </Text>
         <MovieList primary_release_year={2024} />
-        <Text style={tw('text-center font-bold text-4xl')}>Ryan Reynolds</Text>
+        <Text style={tw('text-center font-bold text-4xl  text-white')}>
+          Ryan Reynolds
+        </Text>
         <MovieList with_cast={'10859'} />
-        <Text style={tw('text-center font-bold text-4xl')}>Recomended</Text>
+        <Text style={tw('text-center font-bold text-4xl  text-white')}>
+          Recomended
+        </Text>
         <MovieList sort_by="vote_count.desc" />
       </ScrollView>
     </View>

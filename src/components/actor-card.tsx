@@ -51,13 +51,13 @@ export const ActorCard = ({actor}: ActorProps) => {
           }}
         />
         <Text
-          style={tw('text-center text-lg font-bold mt-3')}
+          style={tw('text-center text-2xl font-bold mt-3 text-white')}
           numberOfLines={1}>
           {actor.name}
         </Text>
 
         {'character' in actor ? (
-          <Text numberOfLines={1} style={tw('text-center text-lg')}>
+          <Text numberOfLines={1} style={tw('text-center text-2xl text-white')}>
             {`(${actor.character})`}
           </Text>
         ) : null}

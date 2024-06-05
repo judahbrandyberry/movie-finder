@@ -57,7 +57,7 @@ export const Search = ({
         value={searchQuery}
         style={tw('h-14 m-4')}
         placeholder="Search"
-        placeholderTextColor="black"
+        placeholderTextColor="white"
       />
       <ScrollView
         horizontal
