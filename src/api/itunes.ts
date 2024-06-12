@@ -52,5 +52,5 @@ export const getItunesMovies = async (
   const response = await axios.get<MovieResults>(
     `https://itunes.apple.com/search?term=${movieName}&media=movie`,
   );
-  return response.data.results[0];
+  return response.data.results[0] ?? null;
 };

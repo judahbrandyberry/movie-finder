@@ -1,3 +1,5 @@
+2024-06-12 11:12:19.847 xcodebuild[80279:1102952]  DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
+2024-06-12 11:12:21.015 xcodebuild[80279:1102654] [MT] DVTDeviceOperation: Encountered a build number "" that is incompatible with DVTBuildVersion.
 --- xcodebuild: WARNING: Using the first of multiple matching destinations:
 { platform:tvOS Simulator, id:F23F790D-7BA0-4AC8-A2E2-D28E944948E5, OS:17.5, name:Apple TV }
 { platform:tvOS Simulator, id:F23F790D-7BA0-4AC8-A2E2-D28E944948E5, OS:17.5, name:Apple TV }

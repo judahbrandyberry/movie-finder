@@ -39,24 +39,9 @@
 			"marginTop": 16
 		}
 	},
-	"ml-4": {
+	"mb-4": {
 		"style": {
-			"marginLeft": 16
-		}
-	},
-	"ml-6": {
-		"style": {
-			"marginLeft": 24
-		}
-	},
-	"ml-20": {
-		"style": {
-			"marginLeft": 80
-		}
-	},
-	"ml-2": {
-		"style": {
-			"marginLeft": 8
+			"marginBottom": 16
 		}
 	},
 	"flex": {
@@ -79,9 +64,34 @@
 			"width": 880
 		}
 	},
+	"w-full": {
+		"style": {
+			"width": "100%"
+		}
+	},
+	"w-56": {
+		"style": {
+			"width": 224
+		}
+	},
+	"w-48": {
+		"style": {
+			"width": 192
+		}
+	},
 	"max-w-40": {
 		"style": {
 			"maxWidth": 160
+		}
+	},
+	"max-w-56": {
+		"style": {
+			"maxWidth": 224
+		}
+	},
+	"max-w-48": {
+		"style": {
+			"maxWidth": 192
 		}
 	},
 	"flex-1": {
@@ -108,14 +118,14 @@
 			"flexDirection": "column"
 		}
 	},
-	"items-start": {
-		"style": {
-			"alignItems": "flex-start"
-		}
-	},
 	"items-center": {
 		"style": {
 			"alignItems": "center"
+		}
+	},
+	"justify-center": {
+		"style": {
+			"justifyContent": "center"
 		}
 	},
 	"justify-between": {
@@ -136,6 +146,11 @@
 	"gap-6": {
 		"style": {
 			"gap": 24
+		}
+	},
+	"gap-2": {
+		"style": {
+			"gap": 8
 		}
 	},
 	"overflow-visible": {
@@ -191,36 +206,15 @@
 			"backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
 		}
 	},
+	"bg-black/95": {
+		"style": {
+			"backgroundColor": "rgb(0 0 0 / 0.95)"
+		}
+	},
 	"bg-white": {
 		"style": {
 			"--tw-bg-opacity": 1,
 			"backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-red-200": {
-		"style": {
-			"--tw-bg-opacity": 1,
-			"backgroundColor": "rgb(254 202 202 / var(--tw-bg-opacity))"
-		}
-	},
-	"bg-white/10": {
-		"style": {
-			"backgroundColor": "rgb(255 255 255 / 0.1)"
-		}
-	},
-	"bg-white/90": {
-		"style": {
-			"backgroundColor": "rgb(255 255 255 / 0.9)"
-		}
-	},
-	"bg-black/90": {
-		"style": {
-			"backgroundColor": "rgb(0 0 0 / 0.9)"
-		}
-	},
-	"bg-black/95": {
-		"style": {
-			"backgroundColor": "rgb(0 0 0 / 0.95)"
 		}
 	},
 	"p-2": {
@@ -229,6 +223,14 @@
 			"paddingRight": 8,
 			"paddingBottom": 8,
 			"paddingLeft": 8
+		}
+	},
+	"p-24": {
+		"style": {
+			"paddingTop": 96,
+			"paddingRight": 96,
+			"paddingBottom": 96,
+			"paddingLeft": 96
 		}
 	},
 	"p-4": {
@@ -247,22 +249,6 @@
 			"paddingLeft": 24
 		}
 	},
-	"p-8": {
-		"style": {
-			"paddingTop": 32,
-			"paddingRight": 32,
-			"paddingBottom": 32,
-			"paddingLeft": 32
-		}
-	},
-	"p-24": {
-		"style": {
-			"paddingTop": 96,
-			"paddingRight": 96,
-			"paddingBottom": 96,
-			"paddingLeft": 96
-		}
-	},
 	"px-4": {
 		"style": {
 			"paddingLeft": 16,
@@ -275,26 +261,39 @@
 			"paddingRight": 24
 		}
 	},
-	"py-2": {
-		"style": {
-			"paddingTop": 8,
-			"paddingBottom": 8
-		}
-	},
 	"py-4": {
 		"style": {
 			"paddingTop": 16,
 			"paddingBottom": 16
 		}
 	},
+	"py-2": {
+		"style": {
+			"paddingTop": 8,
+			"paddingBottom": 8
+		}
+	},
+	"px-3": {
+		"style": {
+			"paddingLeft": 12,
+			"paddingRight": 12
+		}
+	},
+	"py-1": {
+		"style": {
+			"paddingTop": 4,
+			"paddingBottom": 4
+		}
+	},
+	"px-2": {
+		"style": {
+			"paddingLeft": 8,
+			"paddingRight": 8
+		}
+	},
 	"pb-4": {
 		"style": {
 			"paddingBottom": 16
-		}
-	},
-	"text-left": {
-		"style": {
-			"textAlign": "left"
 		}
 	},
 	"text-center": {
@@ -308,46 +307,22 @@
 			"lineHeight": 32
 		}
 	},
+	"text-3xl": {
+		"style": {
+			"fontSize": 30,
+			"lineHeight": 36
+		}
+	},
 	"text-4xl": {
 		"style": {
 			"fontSize": 36,
 			"lineHeight": 40
 		}
 	},
-	"text-lg": {
-		"style": {
-			"fontSize": 18,
-			"lineHeight": 28
-		}
-	},
 	"text-xl": {
 		"style": {
 			"fontSize": 20,
 			"lineHeight": 28
-		}
-	},
-	"text-8xl": {
-		"style": {
-			"fontSize": 96,
-			"lineHeight": 1
-		}
-	},
-	"text-6xl": {
-		"style": {
-			"fontSize": 60,
-			"lineHeight": 1
-		}
-	},
-	"text-9xl": {
-		"style": {
-			"fontSize": 128,
-			"lineHeight": 1
-		}
-	},
-	"text-3xl": {
-		"style": {
-			"fontSize": 30,
-			"lineHeight": 36
 		}
 	},
 	"font-bold": {
@@ -365,10 +340,21 @@
 			"fontWeight": "600"
 		}
 	},
+	"uppercase": {
+		"style": {
+			"textTransform": "uppercase"
+		}
+	},
 	"text-[#03396D]": {
 		"style": {
 			"--tw-text-opacity": 1,
 			"color": "rgb(3 57 109 / var(--tw-text-opacity))"
+		}
+	},
+	"text-blue-950": {
+		"style": {
+			"--tw-text-opacity": 1,
+			"color": "rgb(23 37 84 / var(--tw-text-opacity))"
 		}
 	},
 	"text-white": {

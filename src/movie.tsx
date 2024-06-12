@@ -60,7 +60,7 @@ export const Movie = ({
   });
 
   const {data: itunesMovie} = useQuery({
-    queryKey: ['movie', movie?.title],
+    queryKey: ['itunes-movie', movie?.title],
     queryFn: () => getItunesMovies(movie?.title),
     enabled: !!movie?.title,
   });
@@ -118,19 +118,32 @@ export const Movie = ({
             style={[tw('text-center font-bold text-white'), {fontSize: 80}]}>
             {movie.title}
           </Text>
-          <Text style={tw('text-center font-bold text-xl text-white')}>
-            {movie.genres.map}
-          </Text>
-          <Text style={tw('text-center font-bold text-xl text-white')}>
+          <View style={tw('flex-row gap-2 justify-center')}>
+            {movie.genres.map(genre => (
+              <View
+                style={tw('bg-white px-2 py-1 rounded-md mb-4 ')}
+                key={genre.id}>
+                <Text
+                  style={tw('text-blue-950 text-xl uppercase font-semibold ')}>
+                  {genre.name}
+                </Text>
+              </View>
+            ))}
+          </View>
+
+          <Text
+            style={tw('text-center font-bold text-xl flex-row  text-white')}>
             {movie.release_date.split('', 4)} •{' '}
             {[...Array(filledStars)].map((_, i) => (
-              <Text>★</Text>
+              <Text key={i}>★</Text>
             ))}
             {[...Array(unfilledStars)].map((_, i) => (
-              <Text>☆</Text>
+              <Text key={i}>☆</Text>
             ))}{' '}
-            {movie.vote_count}
+            {movie.vote_count} • {movie.runtime} minutes • $
+            {movie.revenue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
           </Text>
+
           <Text style={tw('font-medium text-3xl text-white')}>
             {movie.overview}
           </Text>

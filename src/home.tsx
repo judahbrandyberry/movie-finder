@@ -4,7 +4,10 @@ import {RootStackList} from '../App';
 import {useTailwind} from 'tailwind-rn';
 import {MovieList} from './components/movie_list';
 
-export const Home = ({navigation}: NativeStackScreenProps<RootStackList>) => {
+export const Home = ({
+  navigation,
+  route,
+}: NativeStackScreenProps<RootStackList>) => {
   const tw = useTailwind();
   return (
     <View style={tw('p-6 gap-12')}>
@@ -19,8 +22,9 @@ export const Home = ({navigation}: NativeStackScreenProps<RootStackList>) => {
           Ryan Reynolds
         </Text>
         <MovieList with_cast={'10859'} />
+
         <Text style={tw('text-center font-bold text-4xl  text-white')}>
-          Recomended
+          All time best
         </Text>
         <MovieList sort_by="vote_count.desc" />
       </ScrollView>

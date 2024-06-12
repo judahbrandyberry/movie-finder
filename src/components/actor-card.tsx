@@ -41,26 +41,30 @@ export const ActorCard = ({actor}: ActorProps) => {
       onPress={() => navigation.navigate('Actor', {id: actor.id})}>
       <Animated.View
         style={[
-          tw('flex flex-col p-4 max-w-40 items-center'),
+          tw('flex flex-col p-4 max-w-48 items-center'),
           {transform: [{scale: animated}]},
         ]}>
         <Image
-          style={[tw('w-40 rounded-full'), {aspectRatio: 1}]}
+          style={[tw('w-48 rounded-full'), {aspectRatio: 1}]}
           source={{
             uri: 'https://image.tmdb.org/t/p/w500/' + actor.profile_path,
           }}
         />
-        <Text
-          style={tw('text-center text-2xl font-bold mt-3 text-white')}
-          numberOfLines={1}>
-          {actor.name}
-        </Text>
-
-        {'character' in actor ? (
-          <Text numberOfLines={1} style={tw('text-center text-2xl text-white')}>
-            {`(${actor.character})`}
+        <View style={tw('w-full')}>
+          <Text
+            style={tw('text-center text-xl font-bold mt-3 text-white')}
+            numberOfLines={1}>
+            {actor.name}
           </Text>
-        ) : null}
+
+          {'character' in actor ? (
+            <Text
+              numberOfLines={1}
+              style={tw('text-center text-xl text-white')}>
+              {`(${actor.character})`}
+            </Text>
+          ) : null}
+        </View>
       </Animated.View>
     </Pressable>
   );
