@@ -1,13 +1,7 @@
 {
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  },
-  "properties" : {
-    "canvasSize" : {
-      "width" : 1280,
-      "height" : 768
-    }
+    "author" : "xcode",
+    "version" : 1
   },
   "layers" : [
     {
@@ -16,5 +10,11 @@
     {
       "filename" : "simple-design-vintage-white-plain-paper-background_136558-43305.jpg.imagestacklayer"
     }
-  ]
+  ],
+  "properties" : {
+    "canvasSize" : {
+      "height" : 768,
+      "width" : 1280
+    }
+  }
 }

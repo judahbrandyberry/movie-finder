@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "simple-design-vintage-white-plain-paper-background_136558-43305.jpg.png",
+      "filename" : "app_store_icon.png",
       "idiom" : "tv"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
