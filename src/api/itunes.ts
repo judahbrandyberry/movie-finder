@@ -48,9 +48,14 @@ export type Movie = {
 
 export const getItunesMovies = async (
   movieName?: string,
-): Promise<Movie | undefined> => {
+  releaseYear?: string,
+): Promise<Movie | null> => {
   const response = await axios.get<MovieResults>(
-    `https://itunes.apple.com/search?term=${movieName}&media=movie`,
+    `https://itunes.apple.com/search?term=${movieName}&type=movie&media=movie`,
   );
-  return response.data.results[0] ?? null;
+  return (
+    response.data.results.find(
+      x => x.releaseDate.substring(0, 4) === releaseYear,
+    ) ?? null
+  );
 };

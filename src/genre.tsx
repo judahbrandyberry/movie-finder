@@ -28,14 +28,16 @@ export const Genre = ({
   return (
     <View style={tw('flex-row p-6 gap-12')}>
       <View>
-        {query.data?.genres?.map(genre => (
-          <Tab
-            key={genre.id}
-            selectedName={activeGenre?.name ?? ''}
-            onPress={() => navigation.navigate('Genre', {id: genre.id})}
-            name={genre.name}
-          />
-        ))}
+        <ScrollView>
+          {query.data?.genres?.map(genre => (
+            <Tab
+              key={genre.id}
+              selectedName={activeGenre?.name ?? ''}
+              onPress={() => navigation.navigate('Genre', {id: genre.id})}
+              name={genre.name}
+            />
+          ))}
+        </ScrollView>
       </View>
 
       <View style={tw('flex-1')}>

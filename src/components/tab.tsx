@@ -1,11 +1,4 @@
-import {
-  Pressable,
-  Text,
-  TouchableOpacity,
-  View,
-  ViewStyle,
-  useColorScheme,
-} from 'react-native';
+import {Pressable, Text, View, ViewStyle, useColorScheme} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 
 interface Tab {

@@ -16,6 +16,10 @@
   margin-right: -1.5rem
 }
 
+.mb-4 {
+  margin-bottom: 1rem
+}
+
 .mb-6 {
   margin-bottom: 1.5rem
 }
@@ -26,10 +30,6 @@
 
 .mt-4 {
   margin-top: 1rem
-}
-
-.mb-4 {
-  margin-bottom: 1rem
 }
 
 .flex {
@@ -44,6 +44,10 @@
   width: 10rem
 }
 
+.w-48 {
+  width: 12rem
+}
+
 .w-\[55rem\] {
   width: 55rem
 }
@@ -52,20 +56,12 @@
   width: 100%
 }
 
-.w-56 {
-  width: 14rem
+.min-w-40 {
+  min-width: 10rem
 }
 
-.w-48 {
-  width: 12rem
-}
-
-.max-w-40 {
-  max-width: 10rem
-}
-
-.max-w-56 {
-  max-width: 14rem
+.min-w-48 {
+  min-width: 12rem
 }
 
 .max-w-48 {
@@ -104,16 +100,16 @@
   gap: 3rem
 }
 
+.gap-2 {
+  gap: 0.5rem
+}
+
 .gap-4 {
   gap: 1rem
 }
 
 .gap-6 {
   gap: 1.5rem
-}
-
-.gap-2 {
-  gap: 0.5rem
 }
 
 .overflow-visible {
@@ -177,6 +173,11 @@
   padding: 1.5rem
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem
@@ -187,29 +188,14 @@
   padding-right: 1.5rem
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem
-}
-
-.px-3 {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem
-}
-
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem
 }
 
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem
 }
 
 .pb-4 {
@@ -254,6 +240,14 @@
 
 .uppercase {
   text-transform: uppercase
+}
+
+.capitalize {
+  text-transform: capitalize
+}
+
+.normal-case {
+  text-transform: none
 }
 
 .text-\[\#03396D\] {

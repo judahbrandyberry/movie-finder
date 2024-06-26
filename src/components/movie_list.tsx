@@ -1,6 +1,6 @@
 import {useNavigation} from '@react-navigation/native';
 import {useQuery} from '@tanstack/react-query';
-import {Image, ScrollView, Text, TouchableOpacity, View} from 'react-native';
+import {ScrollView} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import {Movie, Recommendation, TMDB} from 'tmdb-ts';
 import {DiscoverEndpoint} from 'tmdb-ts/dist/endpoints';

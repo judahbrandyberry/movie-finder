@@ -1,14 +1,7 @@
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {RootStackList} from '../App';
 import {useTailwind} from 'tailwind-rn';
-import {
-  Image,
-  ScrollView,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {ScrollView, TextInput, View} from 'react-native';
 import {MovieWithMediaType, PersonWithMediaType, TMDB} from 'tmdb-ts';
 import {useQuery} from '@tanstack/react-query';
 import {useState} from 'react';

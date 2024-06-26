@@ -24,6 +24,11 @@
 			"marginRight": -24
 		}
 	},
+	"mb-4": {
+		"style": {
+			"marginBottom": 16
+		}
+	},
 	"mb-6": {
 		"style": {
 			"marginBottom": 24
@@ -37,11 +42,6 @@
 	"mt-4": {
 		"style": {
 			"marginTop": 16
-		}
-	},
-	"mb-4": {
-		"style": {
-			"marginBottom": 16
 		}
 	},
 	"flex": {
@@ -59,6 +59,11 @@
 			"width": 160
 		}
 	},
+	"w-48": {
+		"style": {
+			"width": 192
+		}
+	},
 	"w-[55rem]": {
 		"style": {
 			"width": 880
@@ -69,24 +74,14 @@
 			"width": "100%"
 		}
 	},
-	"w-56": {
+	"min-w-40": {
 		"style": {
-			"width": 224
+			"minWidth": 160
 		}
 	},
-	"w-48": {
+	"min-w-48": {
 		"style": {
-			"width": 192
-		}
-	},
-	"max-w-40": {
-		"style": {
-			"maxWidth": 160
-		}
-	},
-	"max-w-56": {
-		"style": {
-			"maxWidth": 224
+			"minWidth": 192
 		}
 	},
 	"max-w-48": {
@@ -138,6 +133,11 @@
 			"gap": 48
 		}
 	},
+	"gap-2": {
+		"style": {
+			"gap": 8
+		}
+	},
 	"gap-4": {
 		"style": {
 			"gap": 16
@@ -146,11 +146,6 @@
 	"gap-6": {
 		"style": {
 			"gap": 24
-		}
-	},
-	"gap-2": {
-		"style": {
-			"gap": 8
 		}
 	},
 	"overflow-visible": {
@@ -249,6 +244,12 @@
 			"paddingLeft": 24
 		}
 	},
+	"px-2": {
+		"style": {
+			"paddingLeft": 8,
+			"paddingRight": 8
+		}
+	},
 	"px-4": {
 		"style": {
 			"paddingLeft": 16,
@@ -261,34 +262,16 @@
 			"paddingRight": 24
 		}
 	},
-	"py-4": {
-		"style": {
-			"paddingTop": 16,
-			"paddingBottom": 16
-		}
-	},
-	"py-2": {
-		"style": {
-			"paddingTop": 8,
-			"paddingBottom": 8
-		}
-	},
-	"px-3": {
-		"style": {
-			"paddingLeft": 12,
-			"paddingRight": 12
-		}
-	},
 	"py-1": {
 		"style": {
 			"paddingTop": 4,
 			"paddingBottom": 4
 		}
 	},
-	"px-2": {
+	"py-4": {
 		"style": {
-			"paddingLeft": 8,
-			"paddingRight": 8
+			"paddingTop": 16,
+			"paddingBottom": 16
 		}
 	},
 	"pb-4": {
@@ -343,6 +326,16 @@
 	"uppercase": {
 		"style": {
 			"textTransform": "uppercase"
+		}
+	},
+	"capitalize": {
+		"style": {
+			"textTransform": "capitalize"
+		}
+	},
+	"normal-case": {
+		"style": {
+			"textTransform": "none"
 		}
 	},
 	"text-[#03396D]": {
