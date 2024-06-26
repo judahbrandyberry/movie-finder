@@ -1,18 +1,18 @@
 {
-  "info" : {
-    "version" : 1,
-    "author" : "xcode"
-  },
   "images" : [
     {
+      "filename" : "tp.png",
       "idiom" : "tv",
-      "scale" : "1x",
-      "filename" : "movies-1405869_960_720.png"
+      "scale" : "1x"
     },
     {
-      "scale" : "2x",
-      "filename" : "movies-1405869_960_720@2x.png",
-      "idiom" : "tv"
+      "filename" : "tp 1.png",
+      "idiom" : "tv",
+      "scale" : "2x"
     }
-  ]
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
 }
