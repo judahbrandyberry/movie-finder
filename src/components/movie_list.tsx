@@ -1,10 +1,10 @@
-import {useNavigation} from '@react-navigation/native';
-import {useQuery} from '@tanstack/react-query';
-import {ScrollView} from 'react-native';
+import {useQuery, useQueryClient} from '@tanstack/react-query';
+import {FlatList} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
-import {Movie, Recommendation, TMDB} from 'tmdb-ts';
+import {Movie, MovieDiscoverResult, Recommendation, TMDB} from 'tmdb-ts';
 import {DiscoverEndpoint} from 'tmdb-ts/dist/endpoints';
 import {MovieCard} from './movie-card';
+import {uniqBy} from 'lodash';
 
 export type MovieKeys = Parameters<DiscoverEndpoint['movie']>[0];
 
@@ -30,16 +30,41 @@ export const MovieList = ({movies, ...keys}: MovieListProps) => {
     queryKey: ['movies', keys],
     queryFn: () => getMovies(keys),
   });
-  const navigation = useNavigation();
+
+  const queryClient = useQueryClient();
 
   return (
-    <ScrollView
+    <FlatList
       horizontal={true}
-      contentContainerStyle={tw('gap-4 px-6')}
-      style={tw('mb-6 -mx-6')}>
-      {(movies || query.data?.results)?.map(movie => (
-        <MovieCard movie={movie} key={movie.id} />
-      ))}
-    </ScrollView>
+      contentContainerStyle={tw('gap-4 p-6')}
+      onEndReached={async () => {
+        if (
+          !movies &&
+          query.data &&
+          query.data.total_pages > query.data.page &&
+          query.data.page <= 5
+        ) {
+          const newMovies = await getMovies({
+            ...keys,
+            page: query.data.page + 1,
+          });
+          queryClient.setQueryData<MovieDiscoverResult | null>(
+            ['movies', keys],
+            newMovies
+              ? {
+                  ...newMovies,
+                  results: uniqBy(
+                    [...query.data.results, ...newMovies.results],
+                    'id',
+                  ),
+                }
+              : query.data,
+          );
+        }
+      }}
+      data={movies || query.data?.results}
+      style={tw('-m-6 mb-0')}
+      renderItem={({item: movie}) => <MovieCard movie={movie} key={movie.id} />}
+    />
   );
 };

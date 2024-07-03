@@ -5,16 +5,17 @@ import {
   Pressable,
   Text,
   TouchableOpacity,
+  TouchableOpacityProps,
   View,
 } from 'react-native';
 import {useTailwind} from 'tailwind-rn';
 import {Cast, Person} from 'tmdb-ts';
 
-interface ActorProps {
+interface ActorProps extends TouchableOpacityProps {
   actor: Person | Cast;
 }
 
-export const ActorCard = ({actor}: ActorProps) => {
+export const ActorCard = ({actor, ...props}: ActorProps) => {
   const animated = new Animated.Value(1);
 
   const navigation = useNavigation();
@@ -35,6 +36,7 @@ export const ActorCard = ({actor}: ActorProps) => {
   };
   return (
     <Pressable
+      {...props}
       onFocus={fadeIn}
       onBlur={fadeOut}
       key={actor.id}

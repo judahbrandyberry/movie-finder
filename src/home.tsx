@@ -15,7 +15,7 @@ export const Home = ({
         contentContainerStyle={tw('gap-4')}
         style={tw('overflow-visible')}>
         <Text style={tw('text-center font-bold text-4xl text-white')}>
-          Movies Of The Year
+          Movies of the Year
         </Text>
         <MovieList primary_release_year={2024} />
         <Text style={tw('text-center font-bold text-4xl  text-white')}>
@@ -24,7 +24,7 @@ export const Home = ({
         <MovieList with_cast={'10859'} />
 
         <Text style={tw('text-center font-bold text-4xl  text-white')}>
-          All time best
+          All Time Best
         </Text>
         <MovieList sort_by="vote_count.desc" />
       </ScrollView>

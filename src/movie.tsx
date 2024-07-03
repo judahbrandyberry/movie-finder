@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 import {useQuery} from '@tanstack/react-query';
-import {TMDB} from 'tmdb-ts';
+import {ReleaseDateType, TMDB} from 'tmdb-ts';
 import {useTailwind} from 'tailwind-rn';
 import {ActorCard} from './components/actor-card';
 import {getItunesMovies} from './api/itunes';
@@ -20,6 +20,7 @@ import {MovieList} from './components/movie_list';
 import {getWikiData} from './api/wikidata';
 import {getStreamingOptions} from './api/motn';
 import {SvgUri} from 'react-native-svg';
+import {uniqBy} from 'lodash';
 
 const tmdb = new TMDB(
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjA3MDU5ZDE4NGMzNDE4N2JiMGNkNDFiZGFlYWQ4NiIsInN1YiI6IjY1YTgzMmMxMGU1YWJhMDEyYzdkOWM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vLk_0T3LjlZ71lu7f9TCdBM2X7vmSYI1MNm84TljmNk',
@@ -31,6 +32,7 @@ const getMovie = async (id: number) => {
       'reviews',
       'recommendations',
       'external_ids',
+      'release_dates',
     ]);
     return genres;
   } catch (err) {
@@ -62,6 +64,16 @@ export const Movie = ({
   });
   const releaseYear = movie?.release_date.split('', 4).join('');
 
+  const releaseDates = movie?.release_dates.results.find(
+    release_date => release_date.iso_3166_1 === 'US',
+  )?.release_dates;
+
+  const ageRating = releaseDates?.find(
+    result =>
+      result.type === ReleaseDateType.Theatrical ||
+      result.type === ReleaseDateType.Digital,
+  )?.certification;
+
   const {data: itunesMovie} = useQuery({
     queryKey: ['itunes-movie', movieId],
     queryFn: () => getItunesMovies(movie?.title, releaseYear),
@@ -74,7 +86,7 @@ export const Movie = ({
     enabled: !!movie?.external_ids.imdb_id,
   });
 
-  const hasTrailer = itunesMovie?.previewUrl;
+  const hasTrailer = !!itunesMovie?.previewUrl;
 
   const {data: actors} = useQuery({
     queryKey: ['movie-actors', route.params.id],
@@ -94,15 +106,6 @@ export const Movie = ({
     <ScrollView>
       <View style={tw('p-6 flex-row items-center gap-12')}>
         <View>
-          <Image
-            style={[
-              tw(`w-[55rem] rounded-t-lg ${hasTrailer ? '' : 'rounded-b-lg'}`),
-              {aspectRatio: 500 / 281},
-            ]}
-            source={{
-              uri: 'https://image.tmdb.org/t/p/original/' + movie.backdrop_path,
-            }}
-          />
           <Video
             key={fullScreenKey}
             paused
@@ -113,20 +116,42 @@ export const Movie = ({
               setFullScreenKey(Math.random().toString())
             }
           />
-          {hasTrailer && (
+
+          <Image
+            style={[tw(`w-[55rem] rounded-t-lg`), {aspectRatio: 500 / 281}]}
+            resizeMode="cover"
+            source={{
+              uri: 'https://image.tmdb.org/t/p/original/' + movie.backdrop_path,
+            }}
+          />
+          <View style={tw('flex-row')}>
             <Pressable
               style={({focused}) => [
-                tw('bg-black p-6 rounded-b-lg'),
+                tw('bg-black p-6 rounded-b-lg flex-1'),
+                hasTrailer && tw('rounded-r-none'),
                 focused && tw('bg-[#03396D]'),
-              ]}
-              onPress={() => {
-                video.current?.presentFullscreenPlayer();
-              }}>
+              ]}>
               <Text style={tw('font-bold text-2xl text-center text-white')}>
-                Play Trailer
+                Watch List
               </Text>
             </Pressable>
-          )}
+
+            {hasTrailer && (
+              <Pressable
+                style={({focused}) => [
+                  tw('bg-black p-6 rounded-b-lg flex-1'),
+                  hasTrailer && tw('rounded-l-none'),
+                  focused && tw('bg-[#03396D]'),
+                ]}
+                onPress={() => {
+                  video.current?.presentFullscreenPlayer();
+                }}>
+                <Text style={tw('font-bold text-2xl text-center text-white')}>
+                  Play Trailer
+                </Text>
+              </Pressable>
+            )}
+          </View>
         </View>
 
         <View style={tw('flex-1 gap-4')}>
@@ -157,7 +182,8 @@ export const Movie = ({
               <Text key={i}>☆</Text>
             ))}{' '}
             {movie.vote_count} • {movie.runtime} minutes • $
-            {movie.revenue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}
+            {movie.revenue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')}{' '}
+            • {ageRating}
           </Text>
 
           <Text style={tw('font-medium text-3xl text-white')}>
@@ -166,11 +192,11 @@ export const Movie = ({
 
           <ScrollView
             horizontal
-            contentContainerStyle={tw('gap-4')}
-            style={tw('mt-4 flex-none ')}>
+            contentContainerStyle={tw('gap-4 px-6')}
+            style={tw('mt-4 flex-none -mx-6')}>
             {actors.cast
               .filter(actor => actor.profile_path)
-              .map(actor => (
+              .map((actor, index) => (
                 <ActorCard actor={actor} key={actor.id} />
               ))}
           </ScrollView>
@@ -178,7 +204,10 @@ export const Movie = ({
           <ScrollView
             horizontal
             contentContainerStyle={tw('gap-6 items-center')}>
-            {streamingOptions?.map(option => (
+            {uniqBy(
+              streamingOptions,
+              option => `${option.service.id}-${option.type}`,
+            )?.map(option => (
               <TouchableOpacity
                 key={`${option.service.id}-${option.type}`}
                 style={tw('bg-white rounded-lg p-4 items-center min-w-48')}

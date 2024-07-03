@@ -45,7 +45,7 @@ export const Genre = ({
           contentContainerStyle={tw('gap-4')}
           style={tw('overflow-visible')}>
           <Text style={tw('text-center font-bold text-4xl text-white')}>
-            {activeGenre?.name} Of The Year
+            {activeGenre?.name} of the Year
           </Text>
           <MovieList
             primary_release_year={2024}
