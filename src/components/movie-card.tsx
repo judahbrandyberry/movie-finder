@@ -1,17 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
-import {
-  Animated,
-  Image,
-  Pressable,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {Animated, Image, Pressable, Text, View} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
-import {Movie, Recommendation} from 'tmdb-ts';
+import {Movie, MovieDetails, Recommendation} from 'tmdb-ts';
+import {RootStackList} from '../../App';
 
 interface MovieProps {
-  movie: Movie | Recommendation;
+  movie: Movie | Recommendation | MovieDetails;
 }
 
 export const MovieCard = ({movie}: MovieProps) => {
@@ -32,12 +27,12 @@ export const MovieCard = ({movie}: MovieProps) => {
     }).start();
   };
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NativeStackNavigationProp<RootStackList>>();
   return (
     <Pressable
       onFocus={fadeIn}
       onBlur={fadeOut}
-      onPress={() => navigation.navigate('Movie', {id: movie.id})}
+      onPress={() => navigation.push('Movie', {id: movie.id})}
       style={tw('relative')}
       key={movie.id}>
       <Animated.View
@@ -51,7 +46,7 @@ export const MovieCard = ({movie}: MovieProps) => {
         ) : (
           <View
             style={[
-              tw('w-40 rounded-md bg-white items-center justify-center p-4'),
+              tw('w-56 rounded-md bg-white items-center justify-center p-4'),
               {aspectRatio: 500 / 750},
             ]}>
             <Text style={tw('text-center text-lg')}>{movie.title}</Text>

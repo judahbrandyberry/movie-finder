@@ -1,14 +1,22 @@
 import {useQuery, useQueryClient} from '@tanstack/react-query';
 import {FlatList} from 'react-native';
 import {useTailwind} from 'tailwind-rn';
-import {Movie, MovieDiscoverResult, Recommendation, TMDB} from 'tmdb-ts';
+import {
+  Movie,
+  MovieDetails,
+  MovieDiscoverResult,
+  Recommendation,
+  TMDB,
+} from 'tmdb-ts';
 import {DiscoverEndpoint} from 'tmdb-ts/dist/endpoints';
 import {MovieCard} from './movie-card';
 import {uniqBy} from 'lodash';
 
 export type MovieKeys = Parameters<DiscoverEndpoint['movie']>[0];
 
-export type MovieListProps = {movies?: Movie[] | Recommendation[]} & MovieKeys;
+export type MovieListProps = {
+  movies?: Movie[] | Recommendation[] | MovieDetails[];
+} & MovieKeys;
 
 const tmdb = new TMDB(
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjA3MDU5ZDE4NGMzNDE4N2JiMGNkNDFiZGFlYWQ4NiIsInN1YiI6IjY1YTgzMmMxMGU1YWJhMDEyYzdkOWM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vLk_0T3LjlZ71lu7f9TCdBM2X7vmSYI1MNm84TljmNk',
@@ -34,7 +42,7 @@ export const MovieList = ({movies, ...keys}: MovieListProps) => {
   const queryClient = useQueryClient();
 
   return (
-    <FlatList
+    <FlatList<NonNullable<MovieListProps['movies']>[0]>
       horizontal={true}
       contentContainerStyle={tw('gap-4 p-6')}
       onEndReached={async () => {

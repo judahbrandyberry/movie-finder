@@ -7714,6 +7714,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-cloud-store@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/react-native-cloud-store/-/react-native-cloud-store-0.12.0.tgz#724a3a4d545463f2ba9245d20e9dc2aee7907567"
+  integrity sha512-K9bonx25kzxxCTA0nlJL+vECTWTTNMBc3ALllBn87XImS0S2RdQD4VyQDglkOwGF4qs4LvTTMd6Vz1x9VSjQNg==
+
 react-native-codegen@^0.71.5:
   version "0.71.6"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.71.6.tgz"

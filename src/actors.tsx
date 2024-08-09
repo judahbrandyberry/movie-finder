@@ -63,9 +63,9 @@ export const Actors = ({
       <TextInput
         onChangeText={setSearchQuery}
         value={searchQuery}
-        style={tw('h-14 m-4')}
+        style={[tw('h-20 m-4 rounded-lg text-white'), {fontSize: 24}]}
         placeholder="Search"
-        placeholderTextColor="black"
+        placeholderTextColor="white"
       />
 
       <ScrollView

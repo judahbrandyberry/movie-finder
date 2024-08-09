@@ -19,6 +19,8 @@
 		41BF5F3596F87FEE707DDD11 /* libPods-MovieFinder-MovieFinderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F21F13455730034D850CD1C /* libPods-MovieFinder-MovieFinderTests.a */; };
 		47EB63F3390701B2260096C6 /* libPods-MovieFinder-tvOS-MovieFinder-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A0216F1136BF7C90703C880F /* libPods-MovieFinder-tvOS-MovieFinder-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		DA85E6972C3F1907003B9C02 /* EmptySwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85E6962C3F1907003B9C02 /* EmptySwiftFile.swift */; };
+		DA85E6982C3F1907003B9C02 /* EmptySwiftFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA85E6962C3F1907003B9C02 /* EmptySwiftFile.swift */; };
 		EE57DEA5314790D63C074D03 /* libPods-MovieFinder-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA54FCF2086BA3B4678F8237 /* libPods-MovieFinder-tvOS.a */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,10 @@
 		8DC2855AB2CCC04BED0978AE /* libPods-MovieFinder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieFinder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0216F1136BF7C90703C880F /* libPods-MovieFinder-tvOS-MovieFinder-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieFinder-tvOS-MovieFinder-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCE9A90FED9D09047497AB6D /* Pods-MovieFinder-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieFinder-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-MovieFinder-tvOS/Pods-MovieFinder-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		DA85E6942C3F1906003B9C02 /* MovieFinder-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieFinder-Bridging-Header.h"; sourceTree = "<group>"; };
+		DA85E6952C3F1906003B9C02 /* MovieFinder-tvOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MovieFinder-tvOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		DA85E6962C3F1907003B9C02 /* EmptySwiftFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySwiftFile.swift; sourceTree = "<group>"; };
+		DA85E6992C3F19B3003B9C02 /* MovieFinder-tvOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "MovieFinder-tvOS.entitlements"; path = "MovieFinder-tvOS/MovieFinder-tvOS.entitlements"; sourceTree = "<group>"; };
 		E8891750AE2DFBD87A5BDB74 /* Pods-MovieFinder-tvOS-MovieFinder-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieFinder-tvOS-MovieFinder-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-MovieFinder-tvOS-MovieFinder-tvOSTests/Pods-MovieFinder-tvOS-MovieFinder-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EA54FCF2086BA3B4678F8237 /* libPods-MovieFinder-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieFinder-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -159,12 +165,16 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				DA85E6992C3F19B3003B9C02 /* MovieFinder-tvOS.entitlements */,
+				DA85E6962C3F1907003B9C02 /* EmptySwiftFile.swift */,
 				13B07FAE1A68108700A75B9A /* MovieFinder */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* MovieFinderTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				9B1644CBAE2FABCCC6E29A69 /* Pods */,
+				DA85E6942C3F1906003B9C02 /* MovieFinder-Bridging-Header.h */,
+				DA85E6952C3F1906003B9C02 /* MovieFinder-tvOS-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -299,10 +309,11 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1540;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1540;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
@@ -676,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
+				DA85E6972C3F1907003B9C02 /* EmptySwiftFile.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +697,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
+				DA85E6982C3F1907003B9C02 /* EmptySwiftFile.swift in Sources */,
 				2D02E4BC1E0B4A80006451C7 /* AppDelegate.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -717,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 36771B2C8C43AC6099096637 /* Pods-MovieFinder-MovieFinderTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -744,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C329346E04FD437DBF160C6 /* Pods-MovieFinder-MovieFinderTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = MovieFinderTests/Info.plist;
@@ -789,6 +804,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MovieFinder;
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieFinder-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -815,6 +831,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MovieFinder;
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieFinder-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -828,9 +845,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = "MovieFinder-tvOS/MovieFinder-tvOS.entitlements";
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = JA4TDX57C8;
@@ -854,6 +873,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandenburgsoftware.moviefinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieFinder-tvOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 17.0;
@@ -868,9 +889,11 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CODE_SIGN_ENTITLEMENTS = "MovieFinder-tvOS/MovieFinder-tvOS.entitlements";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -894,6 +917,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandenburgsoftware.moviefinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
+				SWIFT_OBJC_BRIDGING_HEADER = "MovieFinder-tvOS-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 17.0;
@@ -904,6 +928,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E8891750AE2DFBD87A5BDB74 /* Pods-MovieFinder-tvOS-MovieFinder-tvOSTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -935,6 +960,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3BDF8C4CCF278F944E8C6CBF /* Pods-MovieFinder-tvOS-MovieFinder-tvOSTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;

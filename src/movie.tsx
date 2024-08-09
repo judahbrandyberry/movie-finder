@@ -15,12 +15,13 @@ import {useTailwind} from 'tailwind-rn';
 import {ActorCard} from './components/actor-card';
 import {getItunesMovies} from './api/itunes';
 import Video, {VideoRef} from 'react-native-video';
-import {useRef, useState} from 'react';
+import {useCallback, useRef, useState} from 'react';
 import {MovieList} from './components/movie_list';
-import {getWikiData} from './api/wikidata';
 import {getStreamingOptions} from './api/motn';
 import {SvgUri} from 'react-native-svg';
 import {uniqBy} from 'lodash';
+import * as CloudStore from 'react-native-cloud-store';
+import {useFocusEffect} from '@react-navigation/native';
 
 const tmdb = new TMDB(
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMjA3MDU5ZDE4NGMzNDE4N2JiMGNkNDFiZGFlYWQ4NiIsInN1YiI6IjY1YTgzMmMxMGU1YWJhMDEyYzdkOWM4MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vLk_0T3LjlZ71lu7f9TCdBM2X7vmSYI1MNm84TljmNk',
@@ -94,6 +95,29 @@ export const Movie = ({
   });
   const tw = useTailwind();
 
+  const [watchList, setWatchList] = useState<number[]>([]);
+  console.log(watchList);
+
+  useFocusEffect(
+    useCallback(() => {
+      const getMovieList = async () => {
+        await CloudStore.kvSync();
+        const json = await CloudStore.kvGetItem('movie_list');
+        let movieList: number[] = [];
+        try {
+          if (json) {
+            movieList = JSON.parse(json);
+          }
+        } catch (err) {
+          console.log(err);
+        }
+        if (movieList) {
+          setWatchList(movieList);
+        }
+      };
+      getMovieList();
+    }, []),
+  );
   if (!movie || !actors) {
     return null;
   }
@@ -101,6 +125,8 @@ export const Movie = ({
   const filledStars = Math.round(movie.vote_average / 2);
 
   const unfilledStars = 5 - filledStars;
+
+  const isInWatchList = watchList.includes?.(movie.id);
 
   return (
     <ScrollView>
@@ -130,9 +156,23 @@ export const Movie = ({
                 tw('bg-black p-6 rounded-b-lg flex-1'),
                 hasTrailer && tw('rounded-r-none'),
                 focused && tw('bg-[#03396D]'),
-              ]}>
+              ]}
+              onPress={() =>
+                (async () => {
+                  const updatedWatchList = isInWatchList
+                    ? watchList.filter(movieId => movie.id !== movieId)
+                    : [movie.id, ...watchList];
+                  if (updatedWatchList) {
+                    setWatchList(updatedWatchList);
+                  }
+                  await CloudStore.kvSetItem(
+                    'movie_list',
+                    JSON.stringify(updatedWatchList),
+                  );
+                })().catch(e => console.log(e.stac))
+              }>
               <Text style={tw('font-bold text-2xl text-center text-white')}>
-                Watch List
+                {(isInWatchList && 'In ') || 'Add To '}Watch List
               </Text>
             </Pressable>
 
@@ -222,8 +262,7 @@ export const Movie = ({
                   {option.price ? (
                     <Text
                       style={tw('text-xl text-center font-medium normal-case')}>
-                      {' '}
-                      - {option.price?.formatted}
+                      s - {option.price?.formatted}
                     </Text>
                   ) : null}
                 </Text>
